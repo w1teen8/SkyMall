@@ -1,0 +1,27 @@
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  background: var(--bg);
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 0 80px rgba(37,99,235,0.15);
+  overflow: hidden;
+}
+
+.page-content {
+  flex: 1;
+  padding-top: var(--header-height);
+  padding-bottom: var(--tab-height);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 481px) {
+  body {
+    background: radial-gradient(ellipse at top, #C7D2FE 0%, #E0E7FF 40%, #EEF2FF 100%);
+    min-height: 100vh;
+  }
+}

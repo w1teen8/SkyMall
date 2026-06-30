@@ -1,0 +1,138 @@
+.promo-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 250;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: pmFadeIn 0.28s ease;
+}
+
+.promo-modal-sheet {
+  width: 100%;
+  max-width: 480px;
+  background: var(--surface);
+  border-radius: 24px 24px 0 0;
+  max-height: 85dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: pmSlideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes pmFadeIn   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pmSlideUp  { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes pmSlideDown{ from { transform: translateY(0); } to { transform: translateY(110%); } }
+@keyframes pmFadeOut  { from { opacity: 1; } to { opacity: 0; } }
+
+.pm-bd-closing     { animation: pmFadeOut   0.28s ease forwards; }
+.pm-sheet-closing  { animation: pmSlideDown 0.28s ease forwards; }
+
+.pm-handle {
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+  margin: 12px auto 0;
+  flex-shrink: 0;
+}
+
+.pm-header {
+  padding: 20px 20px 22px;
+  flex-shrink: 0;
+}
+
+.pm-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.pm-subtitle {
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+}
+
+.pm-hint {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 12px 20px 8px;
+  flex-shrink: 0;
+}
+
+.pm-list {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pm-store-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  border-radius: var(--radius-sm);
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: background 0.15s;
+  border-bottom: 1px solid var(--border);
+}
+
+.pm-store-row:last-child {
+  border-bottom: none;
+}
+
+.pm-store-row:hover,
+.pm-store-row:active {
+  background: var(--bg);
+}
+
+.pm-store-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pm-store-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-body);
+}
+
+.pm-store-floor {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.pm-badge {
+  font-size: 12px;
+  font-weight: 800;
+  color: #C62828;
+  background: #FFEBEE;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pm-close {
+  height: 52px;
+  background: none;
+  color: var(--muted);
+  border: none;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+}

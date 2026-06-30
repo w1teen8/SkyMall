@@ -1,0 +1,148 @@
+.news-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: nmFadeIn 0.3s ease;
+}
+
+.news-modal {
+  width: 100%;
+  max-width: 480px;
+  height: 94dvh;
+  background: var(--surface);
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: nmSlideUp 0.32s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes nmFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes nmSlideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes nmSlideDown {
+  from { transform: translateY(0); }
+  to   { transform: translateY(110%); }
+}
+
+@keyframes nmFadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.nm-closing {
+  animation: nmFadeOut 0.3s ease forwards;
+}
+
+.nm-sheet-closing {
+  animation: nmSlideDown 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+/* Header */
+.nm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--surface);
+}
+
+.nm-back {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nm-header-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Scrollable area */
+.nm-scroll {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Image */
+.nm-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.nm-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.nm-category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Content */
+.nm-content {
+  padding: 20px 20px 40px;
+}
+
+.nm-date {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.nm-title {
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.nm-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nm-paragraph {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-body);
+}

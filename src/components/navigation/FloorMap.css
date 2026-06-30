@@ -1,0 +1,198 @@
+.floor-map-container {
+  width: 100%;
+  position: relative;
+  background: #f8f9fb;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.floor-map-viewport {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.floor-map-wrap {
+  position: relative;
+  width: 100%;
+  will-change: transform;
+}
+
+.floor-map-img {
+  width: 100%;
+  display: block;
+  pointer-events: none;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Store markers ── */
+.store-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  z-index: 5;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.marker-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  transition: transform 0.15s;
+}
+
+.store-marker:hover .marker-dot,
+.store-marker:active .marker-dot {
+  transform: scale(1.3);
+}
+
+.marker-from .marker-dot {
+  background: #4CAF50;
+  width: 13px;
+  height: 13px;
+}
+
+.marker-to .marker-dot {
+  background: #F44336;
+  width: 13px;
+  height: 13px;
+}
+
+.marker-label {
+  background: var(--surface);
+  color: var(--text-body);
+  font-size: 9px;
+  font-weight: 600;
+  padding: 2px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  max-width: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+.marker-from .marker-label {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.marker-to .marker-label {
+  background: #FFEBEE;
+  color: #C62828;
+}
+
+/* ── Zoom controls ── */
+.zoom-controls {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  z-index: 20;
+}
+
+.zoom-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.92);
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.14);
+  color: var(--text-body);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.zoom-btn:hover:not(:disabled) {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.zoom-btn:active:not(:disabled) {
+  transform: scale(0.93);
+}
+
+.zoom-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.zoom-reset {
+  border-color: #FF6B35;
+  color: #FF6B35;
+}
+
+.zoom-reset:hover:not(:disabled) {
+  background: #FF6B35;
+  border-color: #FF6B35;
+  color: #fff;
+}
+
+/* ── Placeholder (when no map image) ── */
+.floor-map-placeholder {
+  min-height: 260px;
+  background: #E8EDF5;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+}
+
+.placeholder-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  max-width: 320px;
+}
+
+.placeholder-store {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-body);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.placeholder-store:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.placeholder-store.from { background: #E8F5E9; border-color: #4CAF50; color: #2E7D32; }
+.placeholder-store.to   { background: #FFEBEE; border-color: #F44336; color: #C62828; }
+
+.placeholder-hint {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+}

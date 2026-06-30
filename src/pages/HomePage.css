@@ -1,0 +1,55 @@
+.dev-credit {
+  padding: 8px 16px 24px;
+}
+
+.dev-credit-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(37,99,235,0.06), rgba(124,58,237,0.06));
+  border: 1px solid rgba(37,99,235,0.12);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.dev-credit-badge {
+  background: var(--grad-primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  padding: 4px 9px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.dev-credit-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dev-credit-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dev-credit-name {
+  font-size: 15px;
+  font-weight: 800;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.2px;
+}
+
+.dev-credit-icon {
+  color: var(--primary);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
